@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: API to analyze GitHub repositories
 servers:
-  - url: https://your-deployed-domain.com  # Change this to your deployed domain
+  - url: https://dry-anchorage-69782-c290240a6462.herokuapp.com/  # Change this to your deployed domain
 paths:
   /ask:
     post:
