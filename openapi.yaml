@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: GitHub Analysis API
+  version: 1.0.0
+  description: API to analyze GitHub repositories
+servers:
+  - url: https://your-deployed-domain.com  # Change this to your deployed domain
+paths:
+  /ask:
+    post:
+      summary: Analyze a GitHub repository
+      operationId: analyzeGithubRepo  # Unique identifier for the operation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                github_repo:
+                  type: string
+                  description: GitHub repository to analyze
+                file_path:
+                  type: string
+                  description: Path within the repository to analyze
+              required:
+                - github_repo
+                - file_path
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: Analysis result
+        '400':
+          description: Bad request
+        '500':
+          description: Server error
